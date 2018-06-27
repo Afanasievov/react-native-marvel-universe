@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
 
 import styles from './Hero.styles';
 import * as SCREENS from '../../../constants/screens';
+import * as BUTTON_TYPES from '../../../constants/buttonTypes';
+import ButtonMU from '../../../components/UI/ButtonMU/ButtonMU';
 
 class Hero extends Component {
   componentDidMount() {
@@ -18,7 +20,11 @@ class Hero extends Component {
     return (
       <View style={styles.container}>
         <Text>Hero Info</Text>
-        <Button onPress={this.onButtonPress} title="Go to Heroes" />
+        <ButtonMU
+          onPress={this.onButtonPress}
+          btnType={BUTTON_TYPES.PRIMARY}
+          title="Go to Heroes"
+        />
       </View>
     );
   }

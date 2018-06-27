@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
 
 import styles from './Heroes.styles';
 import * as SCREENS from '../../constants/screens';
+import * as BUTTON_TYPES from '../../constants/buttonTypes';
+import ButtonMU from '../../components/UI/ButtonMU/ButtonMU';
 
 class Heroes extends Component {
   componentDidMount() {
@@ -10,14 +12,17 @@ class Heroes extends Component {
   }
 
   onButtonPress = () => {
-    console.log('SCREENS.HERO: ', SCREENS.HERO);
     this.props.navigation.navigate(SCREENS.HERO);
   }
   render() {
     return (
       <View style={styles.container}>
         <Text>Heroes Screen</Text>
-        <Button onPress={this.onButtonPress} title="Go to Details" />
+        <ButtonMU
+          onPress={this.onButtonPress}
+          btnType={BUTTON_TYPES.BASIC}
+          title="Go to Details"
+        />
       </View>
     );
   }
